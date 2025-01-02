@@ -3,8 +3,8 @@
     "short_name": "DGS",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#7222c4",
-    "theme_color": "#7222c4",
+    "background_color": "#722cd4",
+    "theme_color": "#722cd4",
     "icons": [
         {
             "src": "/images/icon-192x192.png",
