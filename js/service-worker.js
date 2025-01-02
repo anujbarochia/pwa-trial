@@ -1,12 +1,5 @@
-const CACHE_NAME = 'my-pwa-cache-v1';
-const urlsToCache = [
-    '/',
-    '/index.html',
-    '/css/styles.css',
-    '/js/main.js',
-    '/images/icon-192x192.png',
-    '/images/icon-512x512.png'
-];
+const CACHE_NAME = 'my-pwa-cache';
+const urlsToCache = [];
 
 self.addEventListener('install', event => {
     event.waitUntil(
