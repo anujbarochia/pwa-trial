@@ -14,22 +14,13 @@ window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
-  // Update UI notify the user they can install the PWA
-  showInstallPromotion();
+  // Show the install prompt immediately
+  showInstallPrompt();
 });
 
-function showInstallPromotion() {
-  const installButton = document.createElement('button');
-  installButton.innerText = 'Install PWA';
-  installButton.style.position = 'fixed';
-  installButton.style.bottom = '10px';
-  installButton.style.right = '10px';
-  document.body.appendChild(installButton);
-
-  installButton.addEventListener('click', () => {
-    // Show the install prompt
+function showInstallPrompt() {
+  if (deferredPrompt) {
     deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the A2HS prompt');
@@ -37,7 +28,6 @@ function showInstallPromotion() {
         console.log('User dismissed the A2HS prompt');
       }
       deferredPrompt = null;
-      installButton.remove();
     });
-  });
+  }
 }
