@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#722cd4" id="theme-color-meta">
+  <meta name="theme-color" content="#ffffff" id="theme-color-meta">
   <meta name="apple-mobile-web-app-status-bar-style" content="722cd4">
   <meta name="apple-mobile-web-app-title" content="DGS">
   <link rel="apple-touch-startup-image" href="/images/splash-750x1334.png"
@@ -101,7 +101,7 @@
     function updateThemeColor() {
       const themeColorMeta = document.getElementById('theme-color-meta');
       const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      themeColorMeta.setAttribute('content', isDarkMode ? '#000000' : '#722cd4');
+      themeColorMeta.setAttribute('content', isDarkMode ? '#000000' : '#ffffff');
     }
 
     // Initial call to set the theme color
